@@ -10,7 +10,7 @@ public class WizardTest {
 
     @Before
     public void before(){
-        wizard = new Wizard("Harry","Wand",1,10,true,null);
+        wizard = new Wizard("Harry","Wand",1,10,true,null, 1);
 
     }
 
@@ -42,6 +42,12 @@ public class WizardTest {
     public void setAlive(){
         wizard.setAlive(false);
         assertEquals(false, wizard.isAlive());
+    }
+
+    @Test
+    public void setAttackPower(){
+        wizard.setMeleeAttackPower(400);
+        assertEquals(400, wizard.getMeleeAttackPower());
     }
 
     @Test

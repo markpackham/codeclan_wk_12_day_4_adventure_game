@@ -5,17 +5,19 @@ import java.util.ArrayList;
 public abstract class GameCharacter {
     private String name;
     private String meleeWeapon;
+    private int meleeAttackPower;
     private int gold;
     private int health;
     boolean alive;
     private ArrayList items;
 
-    public GameCharacter(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList items) {
+    public GameCharacter(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList<String> items, int meleeAttackPower) {
         this.name = name;
         this.meleeWeapon = meleeWeapon;
         this.gold = gold;
         this.health = health;
         this.alive = alive;
+        this.meleeAttackPower = meleeAttackPower;
         this.items = new ArrayList();
     }
 
@@ -57,6 +59,14 @@ public abstract class GameCharacter {
 
     public void setAlive(boolean alive) {
         this.alive = alive;
+    }
+
+    public int getMeleeAttackPower() {
+        return meleeAttackPower;
+    }
+
+    public void setMeleeAttackPower(int meleeAttackPower) {
+        this.meleeAttackPower = meleeAttackPower;
     }
 
     public ArrayList getItems() {

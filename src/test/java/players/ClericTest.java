@@ -11,7 +11,7 @@ public class ClericTest {
 
     @Before
     public void before(){
-        cleric = new Cleric("Healer McMedic","Book",1,10,true,null);
+        cleric = new Cleric("Healer McMedic","Book",1,10,true,null, 3);
     }
 
     @Test
@@ -42,6 +42,12 @@ public class ClericTest {
     public void setAlive(){
         cleric.setAlive(false);
         assertEquals(false, cleric.isAlive());
+    }
+
+    @Test
+    public void setAttackPower(){
+        cleric.setMeleeAttackPower(400);
+        assertEquals(400, cleric.getMeleeAttackPower());
     }
 
     @Test

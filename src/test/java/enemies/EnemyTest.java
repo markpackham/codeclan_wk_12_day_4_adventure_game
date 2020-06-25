@@ -13,8 +13,9 @@ public class EnemyTest {
 
     @Before
     public void before(){
-        enemy1 = new Enemy("Troll","Fists",1,10,true,null);
-
+        enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
+        enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
+        enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
     }
 
     @Test
@@ -51,5 +52,11 @@ public class EnemyTest {
     public void items(){
         enemy1.addItem("Stones");
         assertEquals(1, enemy1.getItems().size());
+    }
+
+    @Test
+    public void setAttackPower(){
+        enemy1.setMeleeAttackPower(100);
+        assertEquals(100, enemy1.getMeleeAttackPower());
     }
 }

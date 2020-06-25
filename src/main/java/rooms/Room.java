@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public abstract class Room {
 
     private int gold;
-    private ArrayList items;
-    private ArrayList enemies;
+    private ArrayList<String> items;
+    private ArrayList<Enemy> enemies;
 
     public Room( int gold) {
         this.gold = gold;
-        this.items = new ArrayList();
-        this.enemies = new ArrayList();
+        this.items = new ArrayList<String>();
+        this.enemies = new ArrayList<Enemy>();
     }
 
     public ArrayList getItems() {
