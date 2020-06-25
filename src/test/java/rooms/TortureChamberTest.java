@@ -3,6 +3,8 @@ package rooms;
 import enemies.Enemy;
 import org.junit.Before;
 import org.junit.Test;
+import players.Knight;
+import players.Player;
 
 import static org.junit.Assert.*;
 
@@ -10,11 +12,14 @@ public class TortureChamberTest {
 
     TortureChamber chamber1;
     Enemy enemy1;
+    Knight knight;
 
     @Before
     public void setUp() throws Exception {
         chamber1 = new TortureChamber(0);
         enemy1 = new Enemy("Troll","Fists",1,10, 10,true,null, 3);
+        knight = new Knight("Arthur","Warhammer",1,10, 10,true, null, 5);
+
     }
 
     @Test
@@ -34,4 +39,11 @@ public class TortureChamberTest {
         chamber1.addEnemy(enemy1);
         assertEquals(1, chamber1.getEnemies().size());
     }
+
+    @Test
+    public void canAddHero(){
+        chamber1.addHero(knight);
+            assertEquals(1,chamber1.getHeroes().size() );
+        }
+
 }
