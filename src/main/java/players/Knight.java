@@ -5,8 +5,8 @@ import enemies.Enemy;
 import java.util.ArrayList;
 
 public class Knight extends Player {
-    public Knight(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList items, int meleeAttackPower) {
-        super(name, meleeWeapon, gold, health, alive, items, meleeAttackPower);
+    public Knight(String name, String meleeWeapon, int gold, int health, int maxHealth, boolean alive, ArrayList items, int meleeAttackPower) {
+        super(name, meleeWeapon, gold, health, maxHealth, alive, items, meleeAttackPower);
     }
 
     public void addItem(ArrayList item) {
@@ -26,6 +26,7 @@ public class Knight extends Player {
         if(health > 0){
             enemy.setHealth(health);
         }else {
+            enemy.setHealth(0);
             enemy.setAlive(false);
         }
     }

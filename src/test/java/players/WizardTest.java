@@ -14,10 +14,10 @@ public class WizardTest {
 
     @Before
     public void before(){
-        wizard = new Wizard("Harry","Wand",1,10,true,null, 1);
-        enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
-        enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
-        enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
+        wizard = new Wizard("Harry","Wand",1,10, 10,true,null, 1);
+        enemy1 = new Enemy("Troll","Fists",1,10, 10,true, null, 3);
+        enemy2 = new Enemy("Orc","Club",3,5, 5,true,null, 2);
+        enemy3 = new Enemy("Goblin","Spear",1,10, 10,true,null, 1);
 
     }
 

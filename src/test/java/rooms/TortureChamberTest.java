@@ -14,7 +14,7 @@ public class TortureChamberTest {
     @Before
     public void setUp() throws Exception {
         chamber1 = new TortureChamber(0);
-        enemy1 = new Enemy("Troll","Fists",1,10,true,null, 3);
+        enemy1 = new Enemy("Troll","Fists",1,10, 10,true,null, 3);
     }
 
     @Test

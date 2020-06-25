@@ -20,10 +20,10 @@ public class KnightTest {
 
     @Before
     public void before(){
-        knight = new Knight("Arthur","Warhammer",1,10,true, null, 5);
-        enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
-        enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
-        enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
+        knight = new Knight("Arthur","Warhammer",1,10, 10,true, null, 5);
+        enemy1 = new Enemy("Troll","Fists",1,10, 10,true, null, 3);
+        enemy2 = new Enemy("Orc","Club",3,5, 5,true,null, 2);
+        enemy3 = new Enemy("Goblin","Spear",1,10, 10,true,null, 1);
         chamber1 = new TortureChamber(0);
     }
 
