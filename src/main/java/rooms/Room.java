@@ -1,5 +1,7 @@
 package rooms;
 
+import enemies.Enemy;
+
 import java.util.ArrayList;
 
 public abstract class Room {
@@ -40,5 +42,9 @@ public abstract class Room {
 
     public void addItem(String item){
         this.items.add(item);
+    }
+
+    public void addEnemy(Enemy enemy){
+        this.enemies.add(enemy);
     }
 }
