@@ -46,4 +46,9 @@ public class TortureChamberTest {
             assertEquals(1,chamber1.getHeroes().size() );
         }
 
+        @Test
+    public void canGenerate3ExistsOf4Directions(){
+        chamber1.generateExits();
+        assertEquals(3,chamber1.getExists().size());
+        }
 }

@@ -18,7 +18,6 @@ public class Quest {
         this.rooms = rooms;
     }
 
-
     public void addRoom(Room room) {
         this.rooms.add(room);
     }
