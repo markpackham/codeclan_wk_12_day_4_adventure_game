@@ -75,4 +75,11 @@ public class WizardTest {
         wizard.meleeAttack(enemy1);
         assertEquals(false,enemy1.isAlive());
     }
+
+    @Test
+    public void canCastFireball(){
+        enemy1.setHealth(200);
+        wizard.fireBall(enemy1);
+        assertEquals(193, enemy1.getHealth());
+    }
 }

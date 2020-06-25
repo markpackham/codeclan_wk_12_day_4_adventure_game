@@ -32,13 +32,6 @@ public class Cleric extends SupportMage{
         }
     }
 
-    public void addItem(ArrayList item) {
-
-    }
-
-    public void addGold(int gold) {
-
-    }
 
     public void meleeAttack(Enemy enemy) {
         int health = enemy.getHealth() - getMeleeAttackPower();
@@ -51,9 +44,4 @@ public class Cleric extends SupportMage{
 
     }
 
-
-
-    public ArrayList getItem() {
-        return null;
-    }
 }
