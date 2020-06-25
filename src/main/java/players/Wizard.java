@@ -3,8 +3,9 @@ package players;
 import java.util.ArrayList;
 
 public class Wizard extends Player {
-    public Wizard(String name, String meleeWeapon, int gold, int health, boolean alive) {
-        super(name, meleeWeapon, gold, health, alive);
+
+    public Wizard(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList items) {
+        super(name, meleeWeapon, gold, health, alive, items);
     }
 
     public void addItem(ArrayList item) {

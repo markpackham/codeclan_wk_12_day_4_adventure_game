@@ -1,20 +1,22 @@
 package characters;
 
-import behaviors.ILoot;
+import java.util.ArrayList;
 
-public abstract class GameCharacter implements ILoot {
+public abstract class GameCharacter {
     private String name;
     private String meleeWeapon;
     private int gold;
     private int health;
     boolean alive;
+    private ArrayList items;
 
-    public GameCharacter(String name, String meleeWeapon, int gold, int health, boolean alive) {
+    public GameCharacter(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList items) {
         this.name = name;
         this.meleeWeapon = meleeWeapon;
         this.gold = gold;
         this.health = health;
         this.alive = alive;
+        this.items = new ArrayList();
     }
 
     public String getName() {
@@ -57,8 +59,19 @@ public abstract class GameCharacter implements ILoot {
         this.alive = alive;
     }
 
+    public ArrayList getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList items) {
+        this.items = items;
+    }
+
     public void meleeAttack(){
 
     }
 
+    public void addItem(String item){
+        this.items.add(item);
+    }
 }

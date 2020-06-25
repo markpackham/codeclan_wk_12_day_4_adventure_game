@@ -3,9 +3,9 @@ import characters.GameCharacter;
 
 import java.util.ArrayList;
 
-public class Enemy extends GameCharacter{
-    public Enemy(String name, String meleeWeapon, int gold, int health, boolean alive) {
-        super(name, meleeWeapon, gold, health, alive);
+public class Enemy extends GameCharacter {
+    public Enemy(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList items) {
+        super(name, meleeWeapon, gold, health, alive, items);
     }
 
     public void addItem(ArrayList item) {
@@ -16,7 +16,4 @@ public class Enemy extends GameCharacter{
 
     }
 
-    public ArrayList getItem() {
-        return null;
-    }
 }
