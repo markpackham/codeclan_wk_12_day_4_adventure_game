@@ -11,6 +11,8 @@ public abstract class Player extends GameCharacter{
     }
 
     public void getAllRoomItems(Room room){
+        int goldAmount = room.getGold() + getGold();
+        setGold(goldAmount);
         ArrayList<String> roomItems = room.getItems();
         for(String item : roomItems){
             items.add(item);

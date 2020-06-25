@@ -84,9 +84,11 @@ public class KnightTest {
     }
 
     @Test
-    public void canGetAllItemsFromRoom(){
+    public void canGetAllItemsFromRoomAndGold(){
+        chamber1.setGold(3000);
         chamber1.addItem("Candle");
         knight.getAllRoomItems(chamber1);
         assertEquals(1,knight.getItems().size());
+        assertEquals(3001, knight.getGold());
     }
 }
