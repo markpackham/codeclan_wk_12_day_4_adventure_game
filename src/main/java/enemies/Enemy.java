@@ -19,7 +19,12 @@ public class Enemy extends GameCharacter {
 
     public void meleeAttack(Player player) {
         int health = player.getHealth() - getMeleeAttackPower();
-        player.setHealth(health);
+        if(health > 0){
+            player.setHealth(health);
+        }else {
+            player.setAlive(false);
+        }
+
     }
 
 }

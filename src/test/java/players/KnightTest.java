@@ -70,4 +70,12 @@ public class KnightTest {
         knight.meleeAttack(enemy1);
         assertEquals(5,enemy1.getHealth());
     }
+
+    @Test
+    public void canMeleeKillEnemy(){
+        knight.meleeAttack(enemy1);
+        knight.meleeAttack(enemy1);
+        knight.meleeAttack(enemy1);
+        assertEquals(false,enemy1.isAlive());
+    }
 }

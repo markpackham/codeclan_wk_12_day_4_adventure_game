@@ -19,7 +19,12 @@ public class Cleric extends Player{
 
     public void meleeAttack(Enemy enemy) {
         int health = enemy.getHealth() - getMeleeAttackPower();
-        enemy.setHealth(health);
+        if(health > 0){
+            enemy.setHealth(health);
+        }else {
+            enemy.setAlive(false);
+        }
+
     }
 
     public ArrayList getItem() {

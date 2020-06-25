@@ -68,4 +68,11 @@ public class ClericTest {
         cleric.meleeAttack(enemy1);
         assertEquals(7,enemy1.getHealth());
     }
+
+    @Test
+    public void canMeleeKillEnemy(){
+        enemy1.setHealth(1);
+        cleric.meleeAttack(enemy1);
+        assertEquals(false,enemy1.isAlive());
+    }
 }

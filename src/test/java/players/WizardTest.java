@@ -68,4 +68,11 @@ public class WizardTest {
         wizard.meleeAttack(enemy1);
         assertEquals(9,enemy1.getHealth());
     }
+
+    @Test
+    public void canMeleeKillEnemy(){
+        enemy1.setHealth(1);
+        wizard.meleeAttack(enemy1);
+        assertEquals(false,enemy1.isAlive());
+    }
 }

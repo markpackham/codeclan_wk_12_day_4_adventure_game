@@ -69,4 +69,11 @@ public class EnemyTest {
         enemy1.meleeAttack(knight);
         assertEquals(7, knight.getHealth());
     }
+
+    @Test
+    public void canMeleeKillPlayer(){
+        knight.setHealth(1);
+        enemy1.meleeAttack(knight);
+        assertEquals(false,knight.isAlive());
+    }
 }
