@@ -42,6 +42,12 @@ public abstract class Room {
     }
 
     public ArrayList getEnemies() {
+        for(Enemy enemy: enemies){
+            if(enemy.isAlive() == false){
+                enemies.remove(enemy);
+            }
+        }
+
         return enemies;
     }
 

@@ -29,7 +29,7 @@ public class QuestTest {
         jail1 = new JailCell(5);
         courtyard1 = new Courtyard(15);
         quest1 = new Quest();
-        knight = new Knight("Arthur","Warhammer",1,10, 10,true, null, 5);
+        knight = new Knight("Arthur","Warhammer",1,20, 10,true, null, 5);
         cleric = new Cleric("Healer McMedic","Book",1,10, 10,true,null, 3);
         enemy1 = new Enemy("Troll","Fists",1,10, 10,true, null, 3);
         enemy2 = new Enemy("Orc","Club",3,5, 5,true,null, 2);
@@ -38,6 +38,12 @@ public class QuestTest {
 
     @Test
     public void canAddRoom(){
+        quest1.addRoom(mainhall1);
+        assertEquals(1,quest1.getRooms().size());
+    }
+
+    @Test
+    public void canFightEnemyInRoom(){
         chamber1.addEnemy(enemy1);
         chamber1.addEnemy(enemy2);
         chamber1.addHero(cleric);
@@ -46,10 +52,7 @@ public class QuestTest {
         knight.meleeAttack(enemy1);
         enemy1.meleeAttack(knight);
         knight.meleeAttack(enemy1);
-        enemy1.meleeAttack(knight);
-
-
-        assertEquals(1,quest1.getRooms().size());
+        assertEquals(1,quest1.getRooms().get(0).getEnemies().size());
     }
 
 
