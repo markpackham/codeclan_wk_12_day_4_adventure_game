@@ -55,7 +55,33 @@ public class QuestTest {
         assertEquals(1,quest1.getRooms().get(0).getEnemies().size());
     }
 
+    @Test
+    public void cannotLootRoomEnemiesStillThere(){
+        chamber1.setGold(10000);
+        chamber1.addEnemy(enemy1);
+        chamber1.addEnemy(enemy2);
+        chamber1.addHero(cleric);
+        chamber1.addHero(knight);
+        quest1.addRoom(chamber1);
+        knight.meleeAttack(enemy1);
+        enemy1.meleeAttack(knight);
+        knight.meleeAttack(enemy1);
+        knight.getAllRoomItems(chamber1);
+        assertEquals(1,knight.getGold());
+    }
 
-
+    // FAILING, issue with melee attack after enemy status set to alive = false
+    @Test
+    public void canLootRoomEnemiesDead(){
+        chamber1.setGold(10000);
+        chamber1.addItem("Candle");
+        chamber1.addEnemy(enemy1);
+        chamber1.addHero(knight);
+        quest1.addRoom(chamber1);
+        knight.meleeAttack(enemy1);
+        knight.meleeAttack(enemy1);
+        knight.getAllRoomItems(chamber1);
+        assertEquals(10001, knight.getGold());
+    }
 
 }

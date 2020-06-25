@@ -94,4 +94,7 @@ public abstract class Room {
         exists.remove(randomNum);
         }
 
+    public void remove(Enemy enemy) {
+        this.enemies.remove(enemy);
+    }
 }
