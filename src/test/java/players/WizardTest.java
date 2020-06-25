@@ -1,5 +1,6 @@
 package players;
 
+import enemies.Enemy;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -7,10 +8,16 @@ import static org.junit.Assert.assertEquals;
 public class WizardTest {
 
    Wizard wizard;
+    Enemy enemy1;
+    Enemy enemy2;
+    Enemy enemy3;
 
     @Before
     public void before(){
         wizard = new Wizard("Harry","Wand",1,10,true,null, 1);
+        enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
+        enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
+        enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
 
     }
 
@@ -54,5 +61,11 @@ public class WizardTest {
     public void items(){
         wizard.addItem("Stones");
         assertEquals(1, wizard.getItems().size());
+    }
+
+    @Test
+    public void canMeleeAttack(){
+        wizard.meleeAttack(enemy1);
+        assertEquals(9,enemy1.getHealth());
     }
 }

@@ -1,5 +1,6 @@
 package enemies;
 import characters.GameCharacter;
+import players.Player;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,11 @@ public class Enemy extends GameCharacter {
 
     public void addGold(int gold) {
 
+    }
+
+    public void meleeAttack(Player player) {
+        int health = player.getHealth() - getMeleeAttackPower();
+        player.setHealth(health);
     }
 
 }

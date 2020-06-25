@@ -1,5 +1,6 @@
 package players;
 
+import enemies.Enemy;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,10 +9,16 @@ import static org.junit.Assert.assertEquals;
 public class ClericTest {
 
     Cleric cleric;
+    Enemy enemy1;
+    Enemy enemy2;
+    Enemy enemy3;
 
     @Before
     public void before(){
         cleric = new Cleric("Healer McMedic","Book",1,10,true,null, 3);
+        enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
+        enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
+        enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
     }
 
     @Test
@@ -54,5 +61,11 @@ public class ClericTest {
     public void items(){
         cleric.addItem("Watch");
         assertEquals(1, cleric.getItems().size());
+    }
+
+    @Test
+    public void canMeleeAttack(){
+        cleric.meleeAttack(enemy1);
+        assertEquals(7,enemy1.getHealth());
     }
 }

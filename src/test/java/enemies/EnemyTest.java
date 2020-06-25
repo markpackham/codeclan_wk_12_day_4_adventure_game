@@ -2,17 +2,21 @@ package enemies;
 
 import org.junit.Before;
 import org.junit.Test;
+import players.Knight;
+import players.Player;
 
 import static org.junit.Assert.assertEquals;
 
 public class EnemyTest {
 
+    Player knight;
     Enemy enemy1;
     Enemy enemy2;
     Enemy enemy3;
 
     @Before
     public void before(){
+        knight = new Knight("Arthur","Warhammer",1,10,true, null, 5);
         enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
         enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
         enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
@@ -58,5 +62,11 @@ public class EnemyTest {
     public void setAttackPower(){
         enemy1.setMeleeAttackPower(100);
         assertEquals(100, enemy1.getMeleeAttackPower());
+    }
+
+    @Test
+    public void meleeAttack() {
+        enemy1.meleeAttack(knight);
+        assertEquals(7, knight.getHealth());
     }
 }

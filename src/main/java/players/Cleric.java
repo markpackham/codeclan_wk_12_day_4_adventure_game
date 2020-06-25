@@ -1,6 +1,7 @@
 package players;
 
 import java.util.ArrayList;
+import enemies.Enemy;
 
 public class Cleric extends Player{
 
@@ -14,6 +15,11 @@ public class Cleric extends Player{
 
     public void addGold(int gold) {
 
+    }
+
+    public void meleeAttack(Enemy enemy) {
+        int health = enemy.getHealth() - getMeleeAttackPower();
+        enemy.setHealth(health);
     }
 
     public ArrayList getItem() {
