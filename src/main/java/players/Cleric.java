@@ -3,7 +3,7 @@ package players;
 import java.util.ArrayList;
 import enemies.Enemy;
 
-public class Cleric extends Player{
+public class Cleric extends SupportMage{
 
     public Cleric(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList items, int meleeAttackPower) {
         super(name, meleeWeapon, gold, health, alive, items, meleeAttackPower);
@@ -26,6 +26,8 @@ public class Cleric extends Player{
         }
 
     }
+
+
 
     public ArrayList getItem() {
         return null;

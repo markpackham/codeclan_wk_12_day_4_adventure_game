@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class ClericTest {
 
     Cleric cleric;
+    Knight knight;
     Enemy enemy1;
     Enemy enemy2;
     Enemy enemy3;
@@ -16,6 +17,7 @@ public class ClericTest {
     @Before
     public void before(){
         cleric = new Cleric("Healer McMedic","Book",1,10,true,null, 3);
+        knight = new Knight("Arthur","Warhammer",1,10,true, null, 5);
         enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
         enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
         enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
@@ -74,5 +76,11 @@ public class ClericTest {
         enemy1.setHealth(1);
         cleric.meleeAttack(enemy1);
         assertEquals(false,enemy1.isAlive());
+    }
+
+    @Test
+    public void canHealCharacter(){
+        cleric.heal(knight);
+        assertEquals(15, knight.getHealth());
     }
 }
