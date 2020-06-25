@@ -11,11 +11,13 @@ public class Wizard extends AttackMage {
 
     public void meleeAttack(Enemy enemy) {
         int health = enemy.getHealth() - getMeleeAttackPower();
-        if(health > 0){
-            enemy.setHealth(health);
-        }else {
-            enemy.setHealth(0);
-            enemy.setAlive(false);
+        if(isAlive()) {
+            if (health > 0) {
+                enemy.setHealth(health);
+            } else {
+                enemy.setHealth(0);
+                enemy.setAlive(false);
+            }
         }
 
     }

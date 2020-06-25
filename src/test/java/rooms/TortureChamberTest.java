@@ -51,4 +51,5 @@ public class TortureChamberTest {
         chamber1.generateExits();
         assertEquals(3,chamber1.getExists().size());
         }
+
 }
