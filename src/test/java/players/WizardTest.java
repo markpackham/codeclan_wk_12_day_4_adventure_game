@@ -82,4 +82,12 @@ public class WizardTest {
         wizard.fireBall(enemy1);
         assertEquals(193, enemy1.getHealth());
     }
+
+    @Test
+    public void canSummonCreature(){
+        enemy1.setHealth(200);
+        wizard.summonCreature(enemy1);
+        assertEquals(180, enemy1.getHealth());
+        assertEquals(2, wizard.getCreatureSummons());
+    }
 }
