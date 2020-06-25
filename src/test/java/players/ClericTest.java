@@ -91,4 +91,22 @@ public class ClericTest {
         cleric.heal(knight);
         assertEquals(10, knight.getHealth());
     }
+
+    @Test
+    public void canPotionHeal(){
+        knight.setHealth(1);
+        cleric.setPotionAmount(5);
+        cleric.potionHeal(knight);
+        assertEquals(10, knight.getHealth());
+        assertEquals(4,cleric.getPotionAmount());
+    }
+
+    @Test
+    public void cannotPotionHealNoPotions(){
+        knight.setHealth(1);
+        cleric.setPotionAmount(0);
+        cleric.potionHeal(knight);
+        assertEquals(1, knight.getHealth());
+        assertEquals(0,cleric.getPotionAmount());
+    }
 }
