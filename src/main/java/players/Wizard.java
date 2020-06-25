@@ -9,14 +9,6 @@ public class Wizard extends AttackMage {
         super(name, meleeWeapon, gold, health, maxHealth, alive, items, meleeAttackPower);
     }
 
-    public void addItem(ArrayList item) {
-
-    }
-
-    public void addGold(int gold) {
-
-    }
-
     public void meleeAttack(Enemy enemy) {
         int health = enemy.getHealth() - getMeleeAttackPower();
         if(health > 0){
@@ -28,7 +20,10 @@ public class Wizard extends AttackMage {
 
     }
 
-    public ArrayList getItem() {
-        return null;
+    public void summonCreature(Enemy enemy){
+        int damage = enemy.getHealth() - 30;
+        enemy.setHealth(damage);
+        creatureSummons -= 1;
     }
+
 }

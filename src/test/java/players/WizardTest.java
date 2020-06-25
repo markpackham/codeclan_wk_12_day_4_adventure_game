@@ -87,7 +87,7 @@ public class WizardTest {
     public void canSummonCreature(){
         enemy1.setHealth(200);
         wizard.summonCreature(enemy1);
-        assertEquals(180, enemy1.getHealth());
+        assertEquals(170, enemy1.getHealth());
         assertEquals(2, wizard.getCreatureSummons());
     }
 }

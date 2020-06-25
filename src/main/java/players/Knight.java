@@ -9,14 +9,6 @@ public class Knight extends Player {
         super(name, meleeWeapon, gold, health, maxHealth, alive, items, meleeAttackPower);
     }
 
-    public void addItem(ArrayList item) {
-
-    }
-
-    public void addGold(int gold) {
-
-    }
-
     public ArrayList getItem() {
         return null;
     }
