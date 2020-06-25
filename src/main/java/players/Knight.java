@@ -28,6 +28,5 @@ public class Knight extends Player {
         }else {
             enemy.setAlive(false);
         }
-
     }
 }

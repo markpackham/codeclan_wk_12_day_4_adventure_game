@@ -3,6 +3,8 @@ package players;
 import enemies.Enemy;
 import org.junit.Before;
 import org.junit.Test;
+import rooms.TortureChamber;
+import rooms.Room;
 
 import java.util.ArrayList;
 
@@ -14,6 +16,7 @@ public class KnightTest {
     Enemy enemy1;
     Enemy enemy2;
     Enemy enemy3;
+    Room chamber1;
 
     @Before
     public void before(){
@@ -21,6 +24,7 @@ public class KnightTest {
         enemy1 = new Enemy("Troll","Fists",1,10,true, null, 3);
         enemy2 = new Enemy("Orc","Club",3,5,true,null, 2);
         enemy3 = new Enemy("Goblin","Spear",1,10,true,null, 1);
+        chamber1 = new TortureChamber(0);
     }
 
     @Test
@@ -77,5 +81,12 @@ public class KnightTest {
         knight.meleeAttack(enemy1);
         knight.meleeAttack(enemy1);
         assertEquals(false,enemy1.isAlive());
+    }
+
+    @Test
+    public void canGetAllItemsFromRoom(){
+        chamber1.addItem("Candle");
+        knight.getAllRoomItems(chamber1);
+        assertEquals(1,knight.getItems().size());
     }
 }

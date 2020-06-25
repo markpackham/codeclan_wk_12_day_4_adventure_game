@@ -9,7 +9,7 @@ public abstract class GameCharacter {
     private int gold;
     private int health;
     boolean alive;
-    private ArrayList items;
+    protected ArrayList items;
 
     public GameCharacter(String name, String meleeWeapon, int gold, int health, boolean alive, ArrayList<String> items, int meleeAttackPower) {
         this.name = name;
